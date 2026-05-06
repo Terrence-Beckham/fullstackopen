@@ -9,7 +9,7 @@ const Content = (props) => {
 
                 <p>{'Number of exercises ' + (props.content.parts[0].exercises + props.content.parts[1].exercises + props.content.parts[2].exercises)}</p>
 
-            </div>
+            </div >
     )
 }
 
