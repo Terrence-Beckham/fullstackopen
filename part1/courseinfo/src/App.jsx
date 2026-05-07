@@ -1,13 +1,12 @@
-const Content = (props) => {
-    console.log(props)
+const Content = ({course}) => {
+    console.log(course)
     return (
         <div>
-            <h1> {props.content.name}</h1>
-               <p> {props.content.parts[0].name} {props.content.parts[0].exercises}</p>
-               <p> {props.content.parts[1].name} {props.content.parts[1].exercises}</p>
-               <p> {props.content.parts[2].name} {props.content.parts[2].exercises}</p>
-
-                <p>{'Number of exercises ' + (props.content.parts[0].exercises + props.content.parts[1].exercises + props.content.parts[2].exercises)}</p>
+            <h1> {course.name}</h1>
+               <p> {course.parts[0].name} {course.parts[0].exercises}</p>
+               <p> {course.parts[1].name} {course.parts[1].exercises}</p>
+               <p> {course.parts[2].name} {course.parts[2].exercises}</p>
+                <p>{'Number of exercises ' + (course.parts[0].exercises + course.parts[1].exercises + course.parts[2].exercises)}</p>
 
             </div >
     )
@@ -26,7 +25,7 @@ const App = () => {
 
     return (
         <div>
-            <Content content={course}/>
+            <Content course={course}/>
         </div>
     )
 }

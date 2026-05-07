@@ -33,8 +33,7 @@ const App = () => {
 
 
     const getRandomAnecdote = () => {
-        const totalAnecdotes = currentAnecdotes.length
-        const randomAnecdote = Math.floor(Math.random() * totalAnecdotes)
+        const randomAnecdote = Math.floor(Math.random() *currentAnecdotes.length)
         console.log('This is the random anecdote', randomAnecdote)
         return randomAnecdote
     }
