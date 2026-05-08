@@ -9,14 +9,21 @@ const App = (props) => {
 
     const addNote = (event) => {
         event.preventDefault()
+
+        const setNoteIfNotEmpty = () => {
+            setNotes(notes.concat(noteObject))
+            setNewNote("")
+        }
+
         const noteObject = {
             content: newNote,
             important: Math.random() > 0.5,
             id: String(notes.length + 1)
         }
 
-        setNotes(notes.concat(noteObject));
-        setNewNote("")
+        noteObject.content !== ""
+            ? setNoteIfNotEmpty()
+            :alert("This can't be empty")
     }
 
     const handleNoteChange = (event) => {
@@ -27,7 +34,7 @@ const App = (props) => {
     const notesToShow = showAll
         ? notes
         : notes.filter((note) => note.important === true)
-    console.log('These are the notes to show',notesToShow)
+    console.log('These are the notes to show', notesToShow)
 
     return (
         <div>
